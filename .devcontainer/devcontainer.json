@@ -12,7 +12,8 @@
 				"files.autoSave": "afterDelay"
 			},
 			"extensions": [
-				"golang.Go"
+				"golang.Go",
+				"redhat.vscode-yaml"
 			]
 		}
 	}
