@@ -1,0 +1,23 @@
+on:
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Enter the tag name"
+        required: true
+        type: string
+
+jobs:
+  gox:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ inputs.tag }}
+          tag_name: ${{ inputs.tag }}
+          prerelease: true
+          draft: true

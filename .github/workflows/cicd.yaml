@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  test:
+    uses: ./.github/workflows/_test.yaml
+
+  release:
+    needs: test
+    if: startsWith(github.ref, 'refs/tags/')
+    uses: ./.github/workflows/_release.yaml
+    with:
+      tag: ${{ github.ref_name }}

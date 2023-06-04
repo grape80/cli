@@ -1,0 +1,2 @@
+LOG_DIR=log
+LOG_TEST_DIR=${LOG_DIR}/test
